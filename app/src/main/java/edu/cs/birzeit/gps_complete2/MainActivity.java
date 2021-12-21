@@ -117,6 +117,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUI(Location location) {
+        if(location == null){
+            Toast.makeText(this, "Location not available",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
         tv_lat.setText(String.valueOf(location.getLatitude()));
         tv_lon.setText(String.valueOf(location.getLongitude()));
         tv_accuracy.setText(String.valueOf(location.getAccuracy()));
